@@ -1,0 +1,5 @@
+# GPU 4 policy + GPU 6 judge (1.7B judges share GPU 6), then a colocated 0.6B run
+cd_j17_std after=logs/diag_cd_j4b_solve.done,logs/diag_cd_j4b_score_std.done ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-1.7B
+cd_j17_cf ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-1.7B judge_mode=commit_first
+# after cd_j17_cf: GPU 4 policy + GPU 6 (free by then) for the 4B judge
+cd_j4_slow ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-4B lr=1.0e-5 out_dir=runs/countdown/j4b_standard_train_lr1e-5_s0 judge_token_budget=6000 monitor_prompts=1

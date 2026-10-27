@@ -1,0 +1,2 @@
+# GPU 0 after its queue emptied: seed replicate of the MATH / 0.6B-judge run
+math_j06_std_s1 ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/math.yaml judge=Qwen/Qwen3-0.6B seed=1 judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=24 train_token_budget=384 max_steps=96

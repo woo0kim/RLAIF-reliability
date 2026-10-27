@@ -1,0 +1,1 @@
+diag_math_j4b_score_std after=diag/math/candidates.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task math --stage judge --judge Qwen/Qwen3-4B --parts score_standard judge_token_budget=6000

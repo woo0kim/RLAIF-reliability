@@ -1,0 +1,7 @@
+run,task,judge,mode,pool,lr,seed,steps,done,heldout_gold_0,heldout_gold_peak,heldout_gold_final,heldout_accept_final,train_fp_first16,train_fp_last16,collapse_onset,pretrain_global_youden,online_youden_at_onset,judge_mean_solve,outsolve_step,arm
+countdown/j0.6b_standard_train_s0,countdown,qwen3-0.6b,standard,train,5e-05,0,128,True,0.4296875,0.4296875,0.1796875,1.0,0.4951171875,0.892578125,9.0,0.7087124947175658,0.024700729927007337,0.07421875,0.0,train
+countdown/j0.6b_standard_drop_gap_s0,countdown,qwen3-0.6b,standard,drop_gap,5e-05,0,128,True,0.4296875,0.4296875,0.0390625,1.0,0.30078125,0.970703125,15.0,0.7087124947175658,0.07799580402320139,0.07421875,0.0,drop_gap
+countdown/j0.6b_standard_drop_lowver_s0,countdown,qwen3-0.6b,standard,drop_lowver,5e-05,0,128,True,0.4296875,0.4296875,0.0078125,1.0,0.4541015625,0.9765625,10.0,0.7087124947175658,0.0943827912844527,0.07421875,0.0,drop_lowver
+math/j0.6b_standard_train_s0,math,qwen3-0.6b,standard,train,5e-05,0,96,True,0.6328125,0.75,0.7421875,1.0,0.169921875,0.2421875,46.0,0.5547882280958921,0.015151515151515138,0.5442708333333334,4.0,train
+math/j0.6b_standard_drop_gap_s0,math,qwen3-0.6b,standard,drop_gap,5e-05,0,96,True,0.6328125,0.7890625,0.703125,1.0,0.1728515625,0.2333984375,,0.5547882280958921,,0.5442708333333334,0.0,drop_gap
+math/j0.6b_standard_drop_lowver_s0,math,qwen3-0.6b,standard,drop_lowver,5e-05,0,96,True,0.6328125,0.7734375,0.7578125,0.9921875,0.1484375,0.1953125,34.0,0.5547882280958921,0.0,0.5442708333333334,0.0,drop_lowver

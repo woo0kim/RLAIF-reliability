@@ -1,0 +1,7 @@
+task,judge,collapse_onset|commit_first,collapse_onset|standard,heldout_gold_final|commit_first,heldout_gold_final|standard,heldout_gold_peak|commit_first,heldout_gold_peak|standard,pretrain_global_youden|commit_first,pretrain_global_youden|standard,train_fp_last16|commit_first,train_fp_last16|standard
+countdown,qwen3-0.6b,19.0,9.0,0.0,0.1796875,0.4296875,0.4296875,0.4607479926750247,0.7087124947175658,0.9921875,0.892578125
+countdown,qwen3-1.7b,10.0,10.0,0.25,0.25,0.40625,0.40625,0.6566840400056346,0.6965065502183406,0.7099609375,0.7255859375
+countdown,qwen3-4b,,10.0,,0.203125,,0.40625,,0.7408649105507819,,0.7158203125
+math,qwen3-0.6b,,46.0,0.734375,0.7421875,0.765625,0.75,0.3351621030605397,0.5547882280958921,0.2080078125,0.2421875
+math,qwen3-1.7b,,,,0.703125,,0.703125,,0.0,,0.2451171875
+math,qwen3-4b,,,,0.703125,,0.765625,,0.6948295972331847,,0.05859375

@@ -1,0 +1,6 @@
+# GPU 0 (policy + colocated 0.6B judge)
+cd_j06_std after=logs/diag_cd_j0.6b.done ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-0.6B judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=48 train_token_budget=512
+cd_j06_lowver after=data/countdown/drop_lowver.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-0.6B pool=drop_lowver judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=48 train_token_budget=512
+# slow-learning variant: collapse at lr 5e-5 is faster than one visit per problem (16 steps)
+cd_j06_slow ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-0.6B lr=1.0e-5 out_dir=runs/countdown/j0.6b_standard_train_lr1e-5_s0 judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=48 train_token_budget=512
+cross_cd after=runs/countdown/j0.6b_standard_train_s0/DONE,runs/countdown/j1.7b_standard_train_s0/DONE,runs/countdown/j4b_standard_train_s0/DONE ~/miniforge3/envs/rlaif/bin/python scripts/cross_judge.py --task countdown

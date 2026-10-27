@@ -1,0 +1,3 @@
+# GPU 1: MATH base-policy samples, then the 0.6B judge on MATH
+diag_math_policy ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task math --stage policy
+diag_math_j0.6b after=diag/math/candidates.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task math --stage judge --judge Qwen/Qwen3-0.6B

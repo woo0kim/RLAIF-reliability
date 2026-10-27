@@ -1,0 +1,5 @@
+base: base.yaml
+task: math
+task_kwargs: {levels: [1, 2, 3]}
+max_new_tokens: 400
+gen_batch_size: 32

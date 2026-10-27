@@ -1,0 +1,47 @@
+# Shared defaults for Aspect 1 (RLAIF reliability). Task configs extend this file.
+data_dir: data
+diag_dir: diag
+pool: train          # data/<task>/<pool>.jsonl (the RL training pool)
+heldout: heldout     # data/<task>/<heldout>.jsonl (gold-checked held-out evaluation)
+seed: 0
+
+# models
+policy: Qwen/Qwen3-1.7B
+judge: Qwen/Qwen3-0.6B
+diag_judges: [Qwen/Qwen3-0.6B, Qwen/Qwen3-1.7B, Qwen/Qwen3-4B]
+dtype: float16       # Maxwell GPUs: fp16 storage (bf16 is emulated and ~2x slower)
+policy_device: cuda:0
+judge_device: cuda:1
+
+# judge / reward
+judge_mode: standard     # standard | commit_first
+reward: prob             # prob: P(Yes) (soft AI label, as in RLAIF); verdict: 1[P(Yes) > 0.5]
+monitor_mode: auto       # label-free monitor: the other judge mode on a few groups per step
+monitor_prompts: 2
+judge_token_budget: 12000
+
+# LoRA GRPO
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.0
+lora_targets: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+lr: 5.0e-5
+warmup_steps: 4
+weight_decay: 0.0
+max_grad_norm: 1.0
+beta_kl: 0.0
+adv_norm: std            # std (GRPO) | none (Dr. GRPO)
+prompts_per_step: 8
+group_size: 8
+max_steps: 128
+temperature: 1.0
+gen_batch_size: 32
+grad_checkpointing: false  # true halves activation memory but costs ~1.7x train time here
+train_token_budget: 640  # padded tokens per micro-batch (~8 GB peak for the 1.7B policy)
+eval_every: 16
+save_every: 4         # resumable checkpoints between evals (shared GPUs get OOM-killed)
+eval_max_problems: 128
+
+# pre-training diagnostics
+diag_policy_k: 12
+diag_judge_k: 6

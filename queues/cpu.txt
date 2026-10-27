@@ -1,0 +1,5 @@
+# CPU: per-problem feature tables once every judge has scored, then the causal-test pools (0.6B judge)
+feat_cd after=diag/countdown/qwen3-0.6b/scores_commit_first.jsonl,diag/countdown/qwen3-1.7b/scores_commit_first.jsonl,diag/countdown/qwen3-4b/scores_standard.jsonl,diag/countdown/qwen3-0.6b/solve_samples.jsonl,diag/countdown/qwen3-1.7b/solve_samples.jsonl,diag/countdown/qwen3-4b/solve_samples.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task countdown --stage features
+pools_cd after=diag/countdown/features.csv ~/miniforge3/envs/rlaif/bin/python scripts/make_pools.py --task countdown --judge Qwen/Qwen3-0.6B
+feat_math after=diag/math/qwen3-0.6b/scores_commit_first.jsonl,diag/math/qwen3-1.7b/scores_commit_first.jsonl,diag/math/qwen3-4b/scores_standard.jsonl,diag/math/qwen3-0.6b/solve_samples.jsonl,diag/math/qwen3-1.7b/solve_samples.jsonl,diag/math/qwen3-4b/solve_samples.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task math --stage features
+pools_math after=diag/math/features.csv ~/miniforge3/envs/rlaif/bin/python scripts/make_pools.py --task math --judge Qwen/Qwen3-0.6B

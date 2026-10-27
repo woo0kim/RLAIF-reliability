@@ -1,0 +1,2 @@
+diag_math_j1.7b_solve ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task math --stage judge --judge Qwen/Qwen3-1.7B --parts commit,solve
+diag_math_j1.7b_score after=diag/math/candidates.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task math --stage judge --judge Qwen/Qwen3-1.7B --parts score_standard,score_commit_first

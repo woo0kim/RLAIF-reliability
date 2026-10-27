@@ -1,0 +1,2 @@
+diag_math_j4b_solve ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task math --stage judge --judge Qwen/Qwen3-4B --parts commit,solve judge_token_budget=6000 gen_batch_size=16
+# (skipped to free the GPU; optional) diag_math_j4b_score_cf after=diag/math/candidates.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task math --stage judge --judge Qwen/Qwen3-4B --parts score_commit_first judge_token_budget=6000

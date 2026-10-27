@@ -1,0 +1,3 @@
+# GPU 1 (policy + colocated 0.6B judge)
+math_j06_std after=logs/diag_math_j0.6b.done ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/math.yaml judge=Qwen/Qwen3-0.6B judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=24 train_token_budget=384 max_steps=96
+math_j06_lowver after=data/math/drop_lowver.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/math.yaml judge=Qwen/Qwen3-0.6B pool=drop_lowver judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=24 train_token_budget=384 max_steps=96

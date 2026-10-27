@@ -1,0 +1,7 @@
+split,features,c_index,auc_rows,folds
+heldout_problems,base FP rate,0.5816358017785884,0.766162144211218,5.0
+heldout_problems,solve gap,0.4802663095549541,0.7628326575266617,5.0
+heldout_problems,solve rates,0.6512525331102237,0.8115239179889204,5.0
+heldout_problems,time only,0.5,0.7574723382795717,5.0
+heldout_problems,verifiability,0.5939192812588676,0.7682033655785628,5.0
+heldout_problems,verifiability + solve,0.6655127908038612,0.8167829824109074,5.0

@@ -1,0 +1,3 @@
+# GPU 0: countdown base-policy samples, then the 0.6B judge on countdown
+diag_cd_policy ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task countdown --stage policy
+diag_cd_j0.6b after=diag/countdown/candidates.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/run_diagnostics.py --task countdown --stage judge --judge Qwen/Qwen3-0.6B

@@ -1,0 +1,28 @@
+{
+  "judge": "Qwen/Qwen3-0.6B",
+  "mode": "standard",
+  "k": 32,
+  "n_pool": 128,
+  "drop_lowver": {
+    "n_keep": 96,
+    "dropped_mean_youden": 0.08256513451825948,
+    "dropped_mean_solve_gap": 0.4322916666666667,
+    "dropped_mean_bon_fool_16": 0.36010801499652934,
+    "dropped_mean_policy_solve": 0.5677083333333334
+  },
+  "drop_gap": {
+    "n_keep": 96,
+    "dropped_mean_youden": 0.2724935654623154,
+    "dropped_mean_solve_gap": 0.8411458333333333,
+    "dropped_mean_bon_fool_16": 0.09339064816937423,
+    "dropped_mean_policy_solve": 0.8723958333333333
+  },
+  "drop_random": {
+    "n_keep": 96,
+    "dropped_mean_youden": 0.31990626560939056,
+    "dropped_mean_solve_gap": 0.3671875,
+    "dropped_mean_bon_fool_16": 0.3331045109535423,
+    "dropped_mean_policy_solve": 0.43489583333333337
+  },
+  "overlap_lowver_gap": 12
+}

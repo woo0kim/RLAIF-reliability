@@ -1,0 +1,3 @@
+# GPU 3 policy + GPU 7 judge (4B judge needs a GPU of its own)
+cd_j4_std after=logs/diag_math_j1.7b_score.done,logs/diag_math_j4b_score_std.done ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-4B judge_token_budget=6000 monitor_prompts=1
+math_j4_std ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/math.yaml judge=Qwen/Qwen3-4B judge_token_budget=6000 monitor_prompts=1 max_steps=96

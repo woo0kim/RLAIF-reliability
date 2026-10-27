@@ -1,0 +1,5 @@
+base: base.yaml
+task: countdown
+task_kwargs: {}
+max_new_tokens: 384
+gen_batch_size: 64

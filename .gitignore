@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+logs/
+runs/
+runs_smoke/
+# large per-sample diagnostics; the per-problem tables (features.csv, global.csv) are kept
+diag/**/*.jsonl

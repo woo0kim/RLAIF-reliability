@@ -1,0 +1,6 @@
+# GPU 2 (policy + colocated 0.6B judge)
+cd_j06_gap after=logs/diag_cd_j1.7b_score.done,data/countdown/drop_gap.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-0.6B pool=drop_gap judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=48 train_token_budget=512
+# cd_j06_random ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-0.6B pool=drop_random judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=48 train_token_budget=512
+# math_j06_random after=data/math/drop_random.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/math.yaml judge=Qwen/Qwen3-0.6B pool=drop_random judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=24 train_token_budget=384 max_steps=96
+math_j06_gap after=data/math/drop_gap.jsonl ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/math.yaml judge=Qwen/Qwen3-0.6B pool=drop_gap judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=24 train_token_budget=384 max_steps=96
+math_j06_cf ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/math.yaml judge=Qwen/Qwen3-0.6B judge_mode=commit_first judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=24 train_token_budget=384 max_steps=96

@@ -1,0 +1,5 @@
+# GPU 5 policy + GPU 6 judge
+math_j17_std after=logs/diag_math_j4b_solve.done,logs/diag_cd_j4b_score_std.done ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/math.yaml judge=Qwen/Qwen3-1.7B max_steps=96
+# math_j17_cf (run if time permits) ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/math.yaml judge=Qwen/Qwen3-1.7B judge_mode=commit_first max_steps=96
+cd_j06_cf ~/miniforge3/envs/rlaif/bin/python scripts/train_grpo.py --config configs/countdown.yaml judge=Qwen/Qwen3-0.6B judge_mode=commit_first judge_device=cuda:0 judge_token_budget=6000 gen_batch_size=48 train_token_budget=512
+cross_math after=runs/math/j0.6b_standard_train_s0/DONE,runs/math/j1.7b_standard_train_s0/DONE,runs/math/j4b_standard_train_s0/DONE CUDA_VISIBLE_DEVICES=5 ~/miniforge3/envs/rlaif/bin/python scripts/cross_judge.py --task math
